@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^14.14.22",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
   }
 }
