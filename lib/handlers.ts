@@ -14,11 +14,11 @@ const about = (req, res) => {
 }
 
 //custom 404 page
-const notFound = (req, res) => res.render('404 - Not Found')
+const notFound = (req, res) => res.render('404')
 
 //custom 500 page
 const serverError = (err, req, res, next) => {
-  res.render('500 - Server error')
+  res.render('500')
 }
 
 module.exports = {
