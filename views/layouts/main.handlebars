@@ -3,9 +3,28 @@
 <html>
   <head>
     <title>Gallery</title>
-    <img src="/img/logo.png" alt='gallery-logo'>
+      <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Meadowlark Travel</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/vendor/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+  <!-- Custom cover template styles -->
+  <link rel="stylesheet" href="/vendor/bootstrap/examples/cover.css" rel="stylesheet">
   </head>
-  <body>
-    {{{body}}}
-  </body>
+  <div class="inner cover">
+      {{#if flash}}
+        <div class="alert alert-dismissible alert-{{flash.type}}">
+          <button type="button" class="close"
+            data-dismiss="alert" aria-hidden="true">&times;<button>
+          <strong>{{flash.intro}}</strong> {{{flash.message}}}
+        </div>
+      {{/if}}
+      <header><img src="/img/logo.png" alt="Meadowlark Travel Logo"></header>
+      {{{body}}}
+    </div>
 </html>
