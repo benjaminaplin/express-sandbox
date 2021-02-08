@@ -14,14 +14,16 @@ const fortunes = [
 ]
 
 const home = (req, res) => {
-  res.cookie('monster', 'nom nom')
-  res.cookie('signed_monster', 'nom nom', { signed: true })
-  req.session.userName = 'anonymous'
+  // res.cookie('monster', 'nom nom')
+  // res.cookie('signed_monster', 'nom nom', { signed: true })
+  if(req.session){
+    req.session.userName = 'anonymous'
+  }
 
   res.render('home')
 }
 const about = (req, res) => {
-  res.clearCookie('monster')
+  // res.clearCookie('monster')
   const randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)]
   res.render('about', { fortune: randomFortune })
 }
@@ -31,7 +33,7 @@ const notFound = (req, res) => res.render('404')
 
 //custom 500 page
 const serverError = (err, req, res, next) => {
-  console.log("🚀 ~ file: handlers.ts ~ line 27 ~ serverError ~ err", err)
+  console.log("🚀 ~ file: handlers.ts ~ line 27 ~ serverError ~ err", err.message)
   res.render('500')
 }
 
